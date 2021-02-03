@@ -19,7 +19,9 @@ def update_blocks(date: datetime):
         }
         block_height = block['height']
         if Block.objects.filter(height=block_height).exists():
-            Block.objects.filter(height=block_height).update(**context)
+            existing_block = Block.objects.get(height=block_height)
+            if existing_block.auto_update:
+                Block.objects.filter(height=block_height).update(**context)
         else:
             context['height'] = block_height
             obj = Block.objects.create(**context)

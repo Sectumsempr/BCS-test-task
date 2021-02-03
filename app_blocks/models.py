@@ -8,6 +8,7 @@ class Block(models.Model):
     miner = models.TextField(verbose_name='адрес майнера')
     transactions_count = models.IntegerField(verbose_name='кол-во транзакций в блоке')
     date = models.DateField(null=True, blank=True)
+    auto_update = models.BooleanField(default=True)
 
     class Meta:
         managed = True

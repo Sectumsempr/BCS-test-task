@@ -24,8 +24,7 @@ SECRET_KEY = '#j)_l_bkp##f9srlnq)nvg+f(l1$rk-5%xt6lpx!z*%9a@q#1)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', False)
-
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['198.211.99.20', 'localhost', '127.0.0.1', 'bcs-test-task.herokuapp.com', ]
 
 # Application definition
 
@@ -132,5 +131,3 @@ DATABASES['default'].update(db_from_env)
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-ALLOWED_HOSTS = ['198.211.99.20', 'localhost', '127.0.0.1', 'bcs-test-task.herokuapp.com', ]

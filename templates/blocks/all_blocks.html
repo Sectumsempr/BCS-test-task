@@ -6,7 +6,7 @@
     <title>Blocks</title>
     <style>
         table {
-            width: 100%;
+            width: 200px;
             margin: auto;
             }
         td {
@@ -29,9 +29,6 @@
        <tr>
         <th>Высота</th>
         <th>Хэш блока</th>
-        <th>Время блока</th>
-        <th>Адрес майнера</th>
-        <th>Кол-во транзакций в блоке</th>
        </tr>
 
     {% for block in blocks %}
@@ -40,14 +37,10 @@
                        <a href="/blocks/{{ block.height }}/">{{ block.height }}</a>
                    </td>
                    <td>{{ block.hash }}</td>
-                   <td>{{ block.timestamp }}</td>
-                   <td>{{ block.miner }}</td>
-                   <td>{{ block.transactions_count }}</td>
     </tr>
 {% endfor %}
 </table>
-
-    <div class="pagination">
+    <div class="pagination" style="text-align: center">
         <span class="step-links">
             {% if blocks.has_previous %}
                 <a href="?page={{ blocks.previous_page_number }}">previous</a>
@@ -61,7 +54,7 @@
                 <a href="?page={{ blocks.next_page_number }}">next</a>
             {% endif %}
         </span>
-</div>
+    </div>
 {% else %}
     <p style="text-align: center"> ОШИБКА! Попробуйте перезагрузить страницу. Если ошибка повторится, то блоков не найдено!</p>
 {% endif %}
