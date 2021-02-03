@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Block detail</title>
+</head>
+<body>
+<h2 style="text-align: center">Информация о блоке высотой {{ block.height }}</h2>
+<p>Хэш блока: {{ block.hash }}</p>
+<p>Время блока: {{ block.timestamp }}</p>
+<p>Адрес майнера: {{ block.miner }}</p>
+<p>Кол-во транзакций в блоке: {{ block.transactions_count }}</p>
+
+<h3 style="text-align: right"><a href="{% url 'all_blocks' %}">Вернуться ко всем блокам</a></h3>
+</body>
+</html>
